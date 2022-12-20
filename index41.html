@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	    <style type="text/css">
+	        *,body{
+	        	width:100%;
+	        	height:100%;
+	            padding: 0;
+	            margin:0; 
+	            overflow: hidden;
+	        }
+	        #mainDiv{
+            	width:100%;
+            	height:100%;
+                margin:0px auto;
+                padding:0px auto;
+            	background-image:url("img/bg.jpg");
+            	background-size:cover;
+            	background-position:center;
+            	background-repeat:no-repeat;
+            	position:relative;	
+            }
+            .dituo{
+            	width:65%;
+            	height:22%;
+            	position:relative;
+            	top:55%;
+            	left:20%;
+	
+            }
+            #chahu{
+            	width:20%;
+            	height:30%;
+            	position:relative;
+            	top:54%;
+            	left:-37%;
+            	animation:come 3s linear 1 ;
+            }
+            #chashai{
+            	width:40%;
+            	height:40%;
+            	position:relative;
+            	top:21%;
+            	left:44%;
+            	animation:come 3s linear 1 ;	
+            }
+             span{
+            	font-size:30px;
+            	font-family:"微软雅黑";
+            	position:relative;
+            	top:-59%;
+            	left:1%;
+            }
+            p{
+            	font-size:24px;
+            	font-family: "微软雅黑";
+            	position:relative;
+            	top:-75.5%;
+            	left:24%;
+            	animation:come1 7s linear 1;
+            }
+            .content{
+            	font-size:18px;
+            	font-family: "微软雅黑";
+            	color:burlywood;
+            	position:relative;
+            	top:-170%;
+            	left:35%;
+            	animation:come2 10s linear 1;
+            }
+            #tang{
+            	width:100%;
+            	height:89%;
+            	position:relative;
+            	top:-66%;
+            	left:1%;
+            }
+            #sanjiao{
+            	position:relative;
+            	top:-362%;
+            	left:-4%;
+            	animation:come 3s linear 1 ;
+            }
+            @keyframes come{
+            	0%{opacity:0}
+            	100%{opacity:1}
+            }
+            @keyframes come1{
+            	0%{opacity:0}
+            	25%{opacity:0}
+            	50%{opacity:1}
+            	75%{opacity:0}
+            	100%{opacity:1}
+            }
+            @keyframes come2{
+            	0%{opacity:0}
+            	50%{opacity:0}
+            	75%{opacity:0}
+            	100%{opacity:1}
+            }
+	    </style>   
+	    <script type="text/javascript">
+            //拖动开始 复制拖拽的元素内容
+            function drag(ev){
+                ev.dataTransfer.setData("Text",ev.target.id);
+            }
+            //当拖拽到释放区域内后
+            function drop(ev){
+                ev.preventDefault();
+                var data=ev.dataTransfer.getData("Text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+            function allowDrop(ev){
+                ev.preventDefault();
+            }
+
+        </script>
+	</head>
+	<body>
+		<div id="mainDiv" >
+			<img class="dituo" src="img/dituo.png"/>
+			<img id="chahu" src="img/hu.png" draggable="true" ondragstart="drag(event)"/><img id="chashai" src="img/chashai.png"/>
+			<span>第四汤</span>
+			<img id="tang" src="img/tang.png" />
+			<p>稍宽勿速，轻云渐生。第四汤的注水要少</p>
+			<div class="content">[按住工具栏中的茶壶，移动到茶盏上方]</div>
+			<img id="sanjiao" src="img/sanjiao.png">
+		</div>
+	</body>
+</html>
